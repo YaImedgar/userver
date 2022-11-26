@@ -447,7 +447,7 @@ void ExpirableLruCache<Key, Value, Hash, Equal>::Read(dump::Reader& reader) {
 template <typename Key, typename Value, typename Hash, typename Equal>
 void ExpirableLruCache<Key, Value, Hash, Equal>::NotifyDumper() {
   if (dumper_ != nullptr) {
-    dumper_->SetModifiedAndWriteAsync();
+    dumper_->OnUpdateCompleted();
   }
 }
 
